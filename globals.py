@@ -1,4 +1,5 @@
 
 
 class Globals:
-    pass
+    master = None
+    display = None

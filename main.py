@@ -7,3 +7,7 @@ from tkinter import *
 master = Tk()
 display = Canvas(master, width=500, height=500)
 
+Globals.master = master
+Globals.display = display
+
+master.mainloop()
