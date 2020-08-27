@@ -1,4 +1,4 @@
-from globals import Globals
+from globals import Globals, Direction
 
 class Platform:
 
