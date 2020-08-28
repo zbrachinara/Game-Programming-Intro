@@ -9,3 +9,4 @@ class Direction(Enum):
 class Globals:
     master = None
     display = None
+    controlAvatar = None
