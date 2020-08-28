@@ -15,6 +15,8 @@ display.focus_set()
 controlAvatar = Avatar()
 Globals.controlAvatar = controlAvatar
 
+newPlatform = Platform(10, 50)
+
 display.bind("<d>", lambda e: controlAvatar.move(Direction.EAST))
 display.bind("<s>", lambda e: controlAvatar.move(Direction.SOUTH))
 display.bind("<a>", lambda e: controlAvatar.move(Direction.WEST))
