@@ -22,4 +22,12 @@ display.bind("<s>", lambda e: controlAvatar.move(Direction.SOUTH))
 display.bind("<a>", lambda e: controlAvatar.move(Direction.WEST))
 display.bind("<w>", lambda e: controlAvatar.move(Direction.NORTH))
 
+
+def update():
+    controlAvatar.updatePosition()
+    display.after(Globals.step, update)
+
+
+display.after(2000, update)
+
 master.mainloop()

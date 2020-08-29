@@ -10,3 +10,4 @@ class Globals:
     master = None
     display = None
     controlAvatar = None
+    step = 10
