@@ -28,10 +28,11 @@ class Avatar:
         print("Moved " + str(direction.name) + " to position " + str(self.posX) + ", " + str(self.posY))
 
     def updatePosition(self):
-        self.posX += self.velX
-        self.posY -= self.velY
+        self.posX += self.velX * Globals.step / 1000
+        self.posY -= self.velY * Globals.step / 1000
 
-        self.velX += self.accX
-        self.velY += self.accY
+        self.velX += self.accX * Globals.step / 1000
+        self.velY += self.accY * Globals.step / 1000
 
         Globals.display.coords(self.displayObject, self.posX, self.posY)
+        print(self.velY)
