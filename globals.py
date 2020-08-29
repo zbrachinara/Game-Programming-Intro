@@ -11,3 +11,4 @@ class Globals:
     display = None
     controlAvatar = None
     step = 10
+    gravity = -9.8

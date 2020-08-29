@@ -4,7 +4,7 @@ from PIL import Image, ImageTk
 
 class Avatar:
 
-    def __init__(self, initX=250, initY=100, gravity=-9.8):
+    def __init__(self, initX=250, initY=100):
         self.texture = ImageTk.PhotoImage(image=Image.open("avatar.png"))
         self.displayObject = Globals.display.create_image(initX, initY, image=self.texture)
         self.posX = initX
@@ -12,7 +12,7 @@ class Avatar:
         self.velX = 0
         self.velY = 0
         self.accX = 0
-        self.accY = gravity
+        self.accY = Globals.gravity
 
     def move(self, direction):
         if direction == Direction.EAST:
