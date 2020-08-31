@@ -22,11 +22,12 @@ display.bind("<a>", lambda e: controlAvatar.move(Direction.WEST))
 display.bind("<w>", lambda e: controlAvatar.move(Direction.NORTH))
 
 
+# update function which is called for every [Globals.step] ms
 def update():
     controlAvatar.updatePosition()
     display.after(Globals.step, update)
 
 
-display.after(2000, update)
+display.after(2000, update) # begin updating
 
 master.mainloop()

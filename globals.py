@@ -12,5 +12,5 @@ class Globals:
     master = None
     display = None
     controlAvatar = None
-    step = 10
+    step = 10 # the time (ms) between each update
     gravity = -9.8

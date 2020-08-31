@@ -10,12 +10,14 @@ class Avatar:
 
         self.posX = initX
         self.posY = initY
+        # add in the kinetics variables (initialize accY to gravity)
         self.velX = 0
         self.velY = 0
         self.accX = 0
         self.accY = Globals.gravity
 
     def move(self, direction):
+        # switch to velocity for acceleration feel
         if direction == Direction.EAST:
             self.velX += 1
         elif direction == Direction.SOUTH:
@@ -30,7 +32,7 @@ class Avatar:
 
     def updatePosition(self):
         self.posX += self.velX * Globals.step / 1000
-        self.posY -= self.velY * Globals.step / 1000
+        self.posY -= self.velY * Globals.step / 1000 # subtract because tk down is positive
 
         self.velX += self.accX * Globals.step / 1000
         self.velY += self.accY * Globals.step / 1000
