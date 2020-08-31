@@ -8,5 +8,4 @@ class Platform:
         self.posY = posY
         self.length = length
 
-        # tk object (line)
         self.displayObject = Globals.display.create_line(posX, posY, posX + length, posY)
