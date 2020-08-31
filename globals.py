@@ -12,5 +12,7 @@ class Globals:
     master = None
     display = None
     controlAvatar = None
-    step = 10
-    gravity = -9.8
+    step = 0.01
+    gravity = 0
+
+    surfaceFriction = 2

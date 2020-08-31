@@ -16,23 +16,27 @@ class Avatar:
 
     def move(self, direction):
         if direction == Direction.EAST:
-            self.posX += 1
+            self.velX += 1
         elif direction == Direction.SOUTH:
-            self.posY += 1
+            self.velY -= 1
         elif direction == Direction.WEST:
-            self.posX -= 1
+            self.velX -= 1
         elif direction == Direction.NORTH:
-            self.posY -= 1
+            self.velY += 1
 
         Globals.display.coords(self.displayObject, self.posX, self.posY)
         print("Moved " + str(direction.name) + " to position " + str(self.posX) + ", " + str(self.posY))
 
     def updatePosition(self):
-        self.posX += self.velX * Globals.step / 1000
-        self.posY -= self.velY * Globals.step / 1000
+        self.posX += self.velX * Globals.step
+        self.posY -= self.velY * Globals.step
 
-        self.velX += self.accX * Globals.step / 1000
-        self.velY += self.accY * Globals.step / 1000
+        self.velX += self.accX * Globals.step
+        self.velY += self.accY * Globals.step
+
+        self.velX -= Globals.surfaceFriction * (1 if self.velX > 0 else -1) * Globals.step
+        self.velY -= Globals.surfaceFriction * (1 if self.velY > 0 else -1) * Globals.step
 
         Globals.display.coords(self.displayObject, self.posX, self.posY)
         print(self.velY)
+        print(self.velX)

@@ -25,7 +25,7 @@ display.bind("<w>", lambda e: controlAvatar.move(Direction.NORTH))
 
 def update():
     controlAvatar.updatePosition()
-    display.after(Globals.step, update)
+    display.after(int(Globals.step * 1000), update)
 
 
 display.after(2000, update)
