@@ -11,6 +11,10 @@ class Avatar:
 
         self.posX = initX
         self.posY = initY
+        self.velX = 0
+        self.velY = 0
+        self.accX = 0
+        self.accY = Globals.gravity
 
     # bound to <d>, <s>, <a>, <w>
     def move(self, direction):
@@ -26,3 +30,13 @@ class Avatar:
         # reposition object on [display] after coords are updated
         Globals.display.coords(self.displayObject, self.posX, self.posY)
         print("Moved " + str(direction.name) + " to position " + str(self.posX) + ", " + str(self.posY))
+
+    def updatePosition(self):
+        self.posX += self.velX * Globals.step / 1000
+        self.posY -= self.velY * Globals.step / 1000
+
+        self.velX += self.accX * Globals.step / 1000
+        self.velY += self.accY * Globals.step / 1000
+
+        Globals.display.coords(self.displayObject, self.posX, self.posY)
+        print(self.velY)

@@ -1,5 +1,6 @@
 from globals import Globals, Direction
 
+
 class Platform:
 
     def __init__(self, posX, posY, length=100):
